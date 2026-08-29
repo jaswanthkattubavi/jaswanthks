@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal, useScrollProgress, useScrollSpy } from "@/components/reveal";
-import fortuneFinderImg from "@/assets/project-fortune-finder.jpg";
+import fortuneFinderAsset from "@/assets/project-fortune-finder.png.asset.json";
+const fortuneFinderImg = fortuneFinderAsset.url;
 import nyseImg from "@/assets/project-nyse-forecasting.jpg";
 import emnistImg from "@/assets/project-emnist.jpg";
 import fruitImg from "@/assets/project-fruit-classification.jpg";

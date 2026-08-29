@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal, useScrollProgress, useScrollSpy } from "@/components/reveal";
-import fortuneFinderImg from "@/assets/project-fortune-finder.jpg";
+import fortuneFinderAsset from "@/assets/project-fortune-finder.png.asset.json";
+const fortuneFinderImg = fortuneFinderAsset.url;
 import nyseImg from "@/assets/project-nyse-forecasting.jpg";
 import emnistImg from "@/assets/project-emnist.jpg";
 import fruitImg from "@/assets/project-fruit-classification.jpg";
@@ -245,7 +246,7 @@ const PROJECTS = [
     kind: "Case Note",
     title: "Fortune Finder: Lottery P/L Simulator",
     image: fortuneFinderImg,
-    alt: "Abstract profit and loss trend lines from the Fortune Finder lottery simulator",
+    alt: "Welcome sign for the National Lottery Simulator educational project",
     body: "Educational lottery simulation inspired by the UK National Lottery, expanded into five formats for risk-free probability and profit/loss exploration.",
     notes: [
       ["Formats", "Fortune Finder, Quick Five, Lucky Seven, Power Four, Mega Mix."],

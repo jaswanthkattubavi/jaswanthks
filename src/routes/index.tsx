@@ -246,7 +246,7 @@ const PROJECTS = [
     kind: "Case Note",
     title: "Fortune Finder: Lottery P/L Simulator",
     image: fortuneFinderImg,
-    alt: "Abstract profit and loss trend lines from the Fortune Finder lottery simulator",
+    alt: "Welcome sign for the National Lottery Simulator educational project",
     body: "Educational lottery simulation inspired by the UK National Lottery, expanded into five formats for risk-free probability and profit/loss exploration.",
     notes: [
       ["Formats", "Fortune Finder, Quick Five, Lucky Seven, Power Four, Mega Mix."],

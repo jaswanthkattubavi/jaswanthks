@@ -3,7 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, useScrollProgress, useScrollSpy } from "@/components/reveal";
 import fortuneFinderAsset from "@/assets/project-fortune-finder.png.asset.json";
 const fortuneFinderImg = fortuneFinderAsset.url;
-import nyseImg from "@/assets/project-nyse-forecasting.jpg";
+import nyseAsset from "@/assets/project-nyse-forecasting.png.asset.json";
+const nyseImg = nyseAsset.url;
 import emnistImg from "@/assets/project-emnist.jpg";
 import fruitImg from "@/assets/project-fruit-classification.jpg";
 
@@ -260,7 +261,7 @@ const PROJECTS = [
     kind: "Case Note",
     title: "NYSE Stock Forecasting Tool",
     image: nyseImg,
-    alt: "Abstract stock price line with a dashed forecast continuation",
+    alt: "NYSE forecasting results comparing historical and predicted stock prices",
     body: "Built and compared ARIMA, SARIMA, and LSTM models for stock-price forecasting, then deployed the best workflow through a Flask web application.",
     notes: [
       ["Models", "Statistical and deep learning approaches scored with MAE, MSE, RMSE."],

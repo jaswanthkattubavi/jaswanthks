@@ -334,10 +334,10 @@ const WORKFLOW = [
 ] as const;
 
 const CONTACTS = [
-  ["Email", "Send me a message", "mailto:hello@example.com"],
-  ["LinkedIn", "Connect with me", "#"],
-  ["GitHub", "See the code", "#"],
-  ["HackerRank", "Verified certificates", "#"],
+  ["Email", "Send me a message", "mailto:jaswanth.ksreenivasulu@gmail.com"],
+  ["LinkedIn", "Connect with me", "https://www.linkedin.com/in/jaswanth-ks"],
+  ["GitHub", "See the code", "https://github.com/jaswanthkattubavi"],
+  ["HackerRank", "Verified certificates", "https://www.hackerrank.com/profile/Jaswanth_KS"],
   ["Resume", "View my CV", "#"],
 ] as const;
 
@@ -897,9 +897,7 @@ function Portfolio() {
 
         <footer className="flex flex-col items-start justify-between gap-3 border-t border-line-soft py-8 sm:flex-row sm:items-center">
           <span className="font-mono text-[11px] text-muted-foreground">© 2026 Jaswanth KS</span>
-          <span className="font-mono text-[11px] text-muted-foreground">
-            Built in London · Backend &amp; Applied AI
-          </span>
+          <span className="font-mono text-[11px] text-muted-foreground">Backend &amp; Applied AI</span>
         </footer>
       </main>
     </div>

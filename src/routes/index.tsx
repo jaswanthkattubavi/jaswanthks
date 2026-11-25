@@ -258,6 +258,21 @@ const FEATURED = {
   chips: ["Python", "FastAPI", "LangGraph", "LangChain", "RAG", "Vector Embeddings", "FastMCP", "SQLite", "Pytest"],
 };
 
+const IN_PROGRESS = {
+  title: "Backend Task Processing Platform",
+  body: "A backend application that accepts requests through REST APIs, stores records in PostgreSQL and processes long-running tasks asynchronously using Celery.",
+  features: [
+    "Django REST API with CRUD operations",
+    "PostgreSQL models, relationships and migrations",
+    "Celery background jobs with retry handling",
+    "Redis as a message broker",
+    "Authentication and permission handling",
+    "Unit and API tests using Pytest",
+    "Docker-based local development",
+  ],
+  chips: ["Django", "Django REST Framework", "PostgreSQL", "Celery", "Redis", "Docker", "Pytest"],
+};
+
 const PROJECTS = [
   {
     id: "P-02",
@@ -748,6 +763,39 @@ function Portfolio() {
                   </li>
                 ))}
               </ol>
+            </div>
+          </Reveal>
+
+          <Reveal
+            as="article"
+            className="relative mt-6 rounded-2xl border border-dashed border-line p-7 transition-colors hover:border-primary/40 md:p-8"
+          >
+            <div className="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em]">
+              <span className="rounded-full border border-accent/50 bg-accent/10 px-2.5 py-1 text-accent">
+                In progress · Currently building
+              </span>
+            </div>
+            <h3 className="mt-4 font-display text-[22px] font-semibold leading-tight tracking-tight">
+              {IN_PROGRESS.title}
+            </h3>
+            <p className="mt-3 max-w-[80ch] text-[13.5px] leading-relaxed text-muted-foreground">
+              {IN_PROGRESS.body}
+            </p>
+            <div className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-primary">
+              Planned scope
+            </div>
+            <ul className="mt-2.5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {IN_PROGRESS.features.map((f) => (
+                <li key={f} className="flex gap-2 text-[12.5px] leading-relaxed text-muted-foreground">
+                  <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full border border-primary" />
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 flex flex-wrap gap-1.5">
+              {IN_PROGRESS.chips.map((chip) => (
+                <Chip key={chip}>{chip}</Chip>
+              ))}
             </div>
           </Reveal>
 

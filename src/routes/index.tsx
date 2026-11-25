@@ -82,87 +82,85 @@ const CAPABILITIES = [
   },
 ];
 
-const SKILLS = [
+type SkillLevel = "commercial" | "project" | "familiar";
+
+const SKILL_LEVELS: [SkillLevel, string][] = [
+  ["commercial", "Commercial"],
+  ["project", "Projects"],
+  ["familiar", "Familiar"],
+];
+
+const SKILLS: { group: string; tag: string; items: Partial<Record<SkillLevel, string[]>> }[] = [
   {
-    group: "Programming Languages",
+    group: "Languages",
     tag: "Core",
-    items: ["Python", "JavaScript", "TypeScript", "T-SQL", "SQL"],
+    items: {
+      commercial: ["Python", "TypeScript", "SQL"],
+      project: ["T-SQL"],
+      familiar: ["JavaScript"],
+    },
   },
   {
-    group: "AI / ML & Gen AI",
+    group: "Backend & APIs",
+    tag: "Services",
+    items: {
+      commercial: ["REST APIs", "Python services"],
+      project: ["FastAPI", "Flask", "SQLAlchemy", "FastMCP"],
+      familiar: ["Django", "Microservices"],
+    },
+  },
+  {
+    group: "AI / ML & GenAI",
     tag: "Intelligence",
-    items: [
-      "Machine Learning",
-      "NLP",
-      "LLMs",
-      "RAG",
-      "Azure OpenAI",
-      "LangGraph",
-      "LangChain",
-      "Knowledge Graphs",
-      "TensorFlow",
-      "Keras",
-      "Scikit-learn",
-      "Vector Embeddings",
-      "Semantic Search",
-    ],
+    items: {
+      commercial: ["TensorFlow", "Keras"],
+      project: ["LangGraph", "LangChain", "RAG", "Vector Embeddings", "Semantic Search", "Scikit-learn", "LSTM", "CNN"],
+      familiar: ["Azure OpenAI", "Knowledge Graphs"],
+    },
   },
   {
     group: "Data Engineering",
     tag: "Pipelines",
-    items: [
-      "ETL Pipeline Development",
-      "Data Modelling",
-      "Query Optimisation",
-      "Ingestion & Transformation",
-      "Lakehouse Architecture",
-    ],
-  },
-  {
-    group: "Backend Development & APIs",
-    tag: "Services",
-    items: ["FastAPI", "Flask", "Django", "Microservices", "REST APIs"],
+    items: {
+      commercial: ["ETL Pipelines", "Ingestion & Transformation", "Pandas", "NumPy"],
+      project: ["Data Modelling", "Query Optimisation"],
+      familiar: ["Lakehouse Architecture", "Microsoft Fabric"],
+    },
   },
   {
     group: "Cloud & DevOps",
     tag: "Cloud",
-    items: [
-      "AWS Lambda",
-      "AWS Glue",
-      "DynamoDB",
-      "RDS",
-      "S3",
-      "EC2",
-      "Microsoft Fabric",
-      "Azure",
-      "Docker",
-      "Jenkins",
-      "Kubernetes",
-      "CI/CD",
-      "Terraform",
-      "GitHub Actions",
-    ],
+    items: {
+      commercial: ["AWS Lambda", "AWS Glue", "S3", "EC2", "RDS", "DynamoDB", "Terraform", "Jenkins", "CI/CD"],
+      project: ["Docker", "GitHub Actions"],
+      familiar: ["Azure", "Kubernetes"],
+    },
   },
   {
     group: "Databases",
     tag: "Storage",
-    items: ["PostgreSQL", "MySQL", "SQL Server", "Azure SQL", "Vector Databases"],
+    items: {
+      commercial: ["PostgreSQL", "MySQL"],
+      project: ["SQLite", "SQL Server"],
+      familiar: ["Azure SQL", "Vector Databases"],
+    },
   },
   {
     group: "Analytics",
     tag: "Insights",
-    items: [
-      "Semantic Models",
-      "Data Visualisation",
-      "Analytics Engineering",
-      "DAX",
-      "Data Reporting",
-    ],
+    items: {
+      commercial: ["Monitoring Dashboards", "Data Reporting"],
+      project: ["Plotly", "Data Visualisation"],
+      familiar: ["Semantic Models", "DAX", "Power BI"],
+    },
   },
   {
-    group: "Testing",
+    group: "Testing & Tooling",
     tag: "Reliability",
-    items: ["Pytest", "TDD", "API Testing", "Performance Monitoring", "Git", "GitHub", "Postman"],
+    items: {
+      commercial: ["Git", "API Testing", "Postman"],
+      project: ["Pytest", "TDD", "GitHub"],
+    },
   },
 ];
 
@@ -241,9 +239,28 @@ const CERTS = [
   },
 ];
 
+const FEATURED = {
+  id: "P-01",
+  kind: "Current · Independent project",
+  date: "September 2025 – Present",
+  title: "IntelliFlow — Agentic Ticket Triage System",
+  body: "Built an AI-powered ticket triage system that classifies support requests, retrieves relevant runbooks, proposes actions and supports human approval before tool execution.",
+  features: [
+    "Python and FastAPI backend APIs",
+    "LangGraph agent workflow and state management",
+    "Grounded RAG using document retrieval and vector embeddings",
+    "MCP tool integration through a FastMCP action server",
+    "Human approval before proposed actions are executed",
+    "Rule-based handling for simple password-reset requests",
+    "SQLite workflow state and Pytest testing",
+  ],
+  flow: ["Classify", "Retrieve runbook", "Propose action", "Human approval", "Execute via MCP"],
+  chips: ["Python", "FastAPI", "LangGraph", "LangChain", "RAG", "Vector Embeddings", "FastMCP", "SQLite", "Pytest"],
+};
+
 const PROJECTS = [
   {
-    id: "P-01",
+    id: "P-02",
     kind: "Case Note",
     title: "Fortune Finder: Lottery P/L Simulator",
     image: fortuneFinderImg,
@@ -257,7 +274,7 @@ const PROJECTS = [
     chips: ["Python", "Flask", "SQLAlchemy", "SQLite", "Plotly", "Bootstrap"],
   },
   {
-    id: "P-02",
+    id: "P-03",
     kind: "Case Note",
     title: "NYSE Stock Forecasting Tool",
     image: nyseImg,
@@ -270,7 +287,7 @@ const PROJECTS = [
     chips: ["ARIMA", "SARIMA", "LSTM", "TensorFlow/Keras", "Flask", "Plotly"],
   },
   {
-    id: "P-03",
+    id: "P-04",
     kind: "Deep Learning",
     title: "EMNIST Character Recognition",
     image: emnistImg,
@@ -283,7 +300,7 @@ const PROJECTS = [
     chips: ["TensorFlow", "Keras", "CNN", "Python"],
   },
   {
-    id: "P-04",
+    id: "P-05",
     kind: "Computer Vision",
     title: "Fruit Classification System",
     image: fruitImg,
@@ -306,17 +323,17 @@ const TIMELINE = [
     chips: ["MSc", "Applied AI", "Python", "Model Evaluation"],
   },
   {
-    period: "2021 — 2023",
+    period: "Nov 2021 — Aug 2023",
     org: "Growz Software Solutions",
     role: "Software Engineer",
-    body: "Backend services, data pipelines, cloud infrastructure, and ML-adjacent workflows. Improved data accessibility and query performance by 30% through AWS ingestion and enrichment pipelines, improved incident detection by 50% with ETL monitoring dashboards, and reduced deployment cycle time by 40% using Git, Jenkins, Terraform, and CI/CD.",
+    body: "Backend services, data pipelines, cloud infrastructure, and ML-adjacent workflows. Built AWS-based ingestion and enrichment pipelines to improve data accessibility and query performance, ETL monitoring dashboards tracking accuracy, latency, and failures, and CI/CD delivery workflows with Git, Jenkins, and Terraform.",
     chips: ["AWS", "Python", "TypeScript", "Terraform", "CI/CD"],
   },
   {
-    period: "2020 — 2021",
-    org: "TechBorn IT Solutions",
-    role: "Software Engineer Intern",
-    body: "Backend services and REST APIs for predictive modelling, dashboards, and reporting tools. Assisted classification model development and testing with TensorFlow and Keras, and built Pandas/NumPy preprocessing pipelines.",
+    period: "Sep 2020 — Oct 2021",
+    org: "Techborn IT Solutions",
+    role: "Software Engineer",
+    body: "Backend services and REST APIs for predictive modelling, dashboards, and reporting tools. Contributed to classification model development and testing with TensorFlow and Keras, and built Pandas/NumPy preprocessing pipelines.",
     chips: ["REST APIs", "TensorFlow", "Keras", "Pandas"],
   },
   {
@@ -336,7 +353,7 @@ const WORKFLOW = [
 ] as const;
 
 const CONTACTS = [
-  ["Email", "Send me a message", "mailto:jaswanth.ksreenivasulu@gmail.com"],
+  ["Email", "Send me a message", "mailto:jaswanth.ks.dev@gmail.com"],
   ["LinkedIn", "Connect with me", "https://www.linkedin.com/in/jaswanth-ks"],
   ["GitHub", "See the code", "https://github.com/jaswanthkattubavi"],
   ["HackerRank", "Verified certificates", "https://www.hackerrank.com/profile/Jaswanth_KS"],
@@ -520,10 +537,10 @@ function Portfolio() {
 
               <div className="mt-5 grid grid-cols-2 gap-3">
                 {[
-                  ["04", "Featured projects"],
+                  ["05", "Featured projects"],
                   ["MSc", "Data Science & AI"],
-                  ["+30%", "Query / access"],
-                  ["−40%", "Deploy cycle"],
+                  ["AWS", "Data pipelines"],
+                  ["Agentic", "Current project"],
                 ].map(([value, label]) => (
                   <div
                     key={label}
@@ -618,6 +635,7 @@ function Portfolio() {
             index="03"
             label="Skills"
             title="Stack, grouped by the work it supports."
+            note="Commercial = used in paid roles · Projects = built with in MSc or independent work · Familiar = studied or certified, lighter hands-on use."
           />
           <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2 xl:grid-cols-4">
             {SKILLS.map((s, i) => (
@@ -630,10 +648,23 @@ function Portfolio() {
                     {s.tag}
                   </span>
                 </div>
-                <div className="mt-3.5 flex flex-wrap gap-1.5">
-                  {s.items.map((item) => (
-                    <Chip key={item}>{item}</Chip>
-                  ))}
+                <div className="mt-3.5 space-y-3">
+                  {SKILL_LEVELS.map(([level, levelLabel]) => {
+                    const items = s.items[level];
+                    if (!items?.length) return null;
+                    return (
+                      <div key={level}>
+                        <div className="mb-1.5 font-mono text-[9.5px] uppercase tracking-[0.16em] text-muted-foreground">
+                          {levelLabel}
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {items.map((item) => (
+                            <Chip key={item}>{item}</Chip>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </Reveal>
             ))}
@@ -673,9 +704,54 @@ function Portfolio() {
             index="05"
             label="Projects"
             title="Selected work samples."
-            note="Four applied AI and software projects that live beyond a notebook."
+            note="A current independent agentic AI project, followed by four MSc applied AI and software projects."
           />
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <Reveal
+            as="article"
+            className="group glass glow-ring relative mt-10 overflow-hidden rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 md:p-9"
+          >
+            <div className="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em]">
+              <span className="rounded-full bg-background/70 px-2.5 py-1 text-primary">{FEATURED.id}</span>
+              <span className="rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-primary">
+                Featured · {FEATURED.kind}
+              </span>
+              <span className="text-muted-foreground">{FEATURED.date}</span>
+            </div>
+            <div className="mt-5 grid grid-cols-1 gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-7">
+                <h3 className="font-display text-[26px] font-semibold leading-tight tracking-tight md:text-[30px]">
+                  {FEATURED.title}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">{FEATURED.body}</p>
+                <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {FEATURED.features.map((f) => (
+                    <li key={f} className="flex gap-2 text-[12.5px] leading-relaxed text-muted-foreground">
+                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-1.5">
+                  {FEATURED.chips.map((chip) => (
+                    <Chip key={chip}>{chip}</Chip>
+                  ))}
+                </div>
+              </div>
+              <ol className="space-y-2.5 lg:col-span-5">
+                {FEATURED.flow.map((step, i) => (
+                  <li
+                    key={step}
+                    className="flex items-center gap-3 rounded-xl border border-line-soft bg-panel px-4 py-3 transition-colors hover:border-primary/40"
+                  >
+                    <span className="font-mono text-[10px] text-primary">0{i + 1}</span>
+                    <span className="font-display text-[14px] font-medium tracking-tight">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </Reveal>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal
                 key={p.id}
@@ -818,9 +894,8 @@ function Portfolio() {
   "system": "data_ingestion_platform",
   "cloud": "AWS + Terraform",
   "services": "Python + TypeScript APIs",
-  "query_access": "+30%",
-  "incident_detection": "+50%",
-  "deployment_cycle": "-40%"
+  "delivery": "Git + Jenkins + CI/CD",
+  "monitoring": "ETL accuracy, latency, failures"
 }`}</pre>
             </Reveal>
           </div>

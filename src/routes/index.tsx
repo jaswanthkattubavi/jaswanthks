@@ -11,13 +11,13 @@ import fruitImg from "@/assets/project-fruit-classification.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jaswanth KS — Software Engineer, Backend & Applied AI" },
+      { title: "Jaswanth KS | Software Engineer, Backend & Applied AI" },
       {
         name: "description",
         content:
           "London-based software engineer and MSc Data Science and AI graduate building backend services, applied ML systems, and cloud-ready workflows.",
       },
-      { property: "og:title", content: "Jaswanth KS — Software Engineer, Backend & Applied AI" },
+      { property: "og:title", content: "Jaswanth KS | Software Engineer, Backend & Applied AI" },
       {
         property: "og:description",
         content:
@@ -242,8 +242,8 @@ const CERTS = [
 const FEATURED = {
   id: "P-01",
   kind: "Current · Independent project",
-  date: "September 2025 – Present",
-  title: "IntelliFlow — Agentic Ticket Triage System",
+  date: "September 2025 to Present",
+  title: "IntelliFlow: Agentic Ticket Triage System",
   body: "Built an AI-powered ticket triage system that classifies support requests, retrieves relevant runbooks, proposes actions and supports human approval before tool execution.",
   features: [
     "Python and FastAPI backend APIs",
@@ -331,28 +331,28 @@ const PROJECTS = [
 
 const TIMELINE = [
   {
-    period: "2023 — 2025",
+    period: "2023 to 2025",
     org: "University of Liverpool",
     role: "MSc Data Science and Artificial Intelligence · Merit",
     body: "Machine learning, information retrieval, applied AI engineering, databases, and data modelling. Applied projects across forecasting, probability simulation, character recognition, and computer vision.",
     chips: ["MSc", "Applied AI", "Python", "Model Evaluation"],
   },
   {
-    period: "Nov 2021 — Aug 2023",
+    period: "Nov 2021 to Aug 2023",
     org: "Growz Software Solutions",
     role: "Software Engineer",
     body: "Backend services, data pipelines, cloud infrastructure, and ML-adjacent workflows. Built AWS-based ingestion and enrichment pipelines to improve data accessibility and query performance, ETL monitoring dashboards tracking accuracy, latency, and failures, and CI/CD delivery workflows with Git, Jenkins, and Terraform.",
     chips: ["AWS", "Python", "TypeScript", "Terraform", "CI/CD"],
   },
   {
-    period: "Sep 2020 — Oct 2021",
+    period: "Sep 2020 to Oct 2021",
     org: "Techborn IT Solutions",
     role: "Software Engineer",
     body: "Backend services and REST APIs for predictive modelling, dashboards, and reporting tools. Contributed to classification model development and testing with TensorFlow and Keras, and built Pandas/NumPy preprocessing pipelines.",
     chips: ["REST APIs", "TensorFlow", "Keras", "Pandas"],
   },
   {
-    period: "2018 — 2021",
+    period: "2018 to 2021",
     org: "Sri Venkateswara University",
     role: "Bachelor of Science · Distinction",
     body: "Graduated with Distinction in computer science, mathematics, and physics.",
@@ -513,7 +513,7 @@ function Portfolio() {
               <p className="mt-7 max-w-[58ch] text-[15.5px] leading-relaxed text-muted-foreground">
                 MSc Data Science and Artificial Intelligence graduate in London, building backend
                 services, applied ML systems, and cloud-ready workflows. My strongest work sits
-                between data science and software engineering — validating models, turning them into
+                between data science and software engineering: validating models, turning them into
                 services, automating manual steps, and shipping systems that can be tested and
                 improved.
               </p>
@@ -617,7 +617,7 @@ function Portfolio() {
             index="02"
             label="Capabilities"
             title="What I can take ownership of."
-            note="From core software systems to AI-powered features — built to be tested, deployed, and improved."
+            note="From core software systems to AI-powered features, built to be tested, deployed, and improved."
           />
           <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
             {CAPABILITIES.map((c, i) => (
@@ -992,7 +992,7 @@ function Portfolio() {
                 </h2>
                 <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-muted-foreground">
                   An ML/AI engineer and software engineer who turns models, APIs, and cloud
-                  workflows into practical products — clean engineering, useful automation, and
+                  workflows into practical products: clean engineering, useful automation, and
                   systems that are easier to trust, operate, and improve.
                 </p>
               </Reveal>
